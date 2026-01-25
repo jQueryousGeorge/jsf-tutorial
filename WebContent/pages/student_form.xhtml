@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+	<h:head>
+	  <title>
+	   <ui:insert name="title">Student Registration Form</ui:insert>
+	  </title>
+	  <h:outputStylesheet library="css" name="styles.css" />
+	</h:head>
+	
+	<h:body>
+	   <h:panelGroup layout="block" styleClass="page">
+		   <h:panelGroup layout="block" styleClass="card">
+			   <h:outputText value="Student Registration" styleClass="page-title" />
+			   <h:outputText value="Enter the student name details below." styleClass="page-subtitle" />
+			   <h:form styleClass="form">
+			       <h:panelGrid columns="2" styleClass="form-grid">
+				       <h:outputLabel for="firstName" value="Student's First Name:" />
+				       <h:inputText id="firstName" value="#{student.firstName}" styleClass="text-input" />
+				       
+				       <h:outputLabel for="lastName" value="Student's Last Name:" />
+				       <h:inputText id="lastName" value="#{student.lastName}" styleClass="text-input" />
+			       </h:panelGrid>
+			       <h:commandButton value="Submit" action="student_response" styleClass="primary-button" />
+			   </h:form>
+		   </h:panelGroup>
+	   </h:panelGroup>
+	</h:body>
+
+
+</html>
