@@ -14,7 +14,29 @@
     <h:body>
         <h:panelGroup layout="block" styleClass="page">
             <h:panelGroup layout="block" styleClass="card">
-                <h:outputText value="Student Registered" styleClass="page-title" />
+                <h:panelGroup layout="block" styleClass="window-bar">
+                    <h:outputText value="Student Registration — Receipt" styleClass="window-title" />
+                    <h:panelGroup layout="block" styleClass="window-controls">
+                        <h:outputText value="[ ]" styleClass="window-btn" />
+                        <h:outputText value="X" styleClass="window-btn" />
+                    </h:panelGroup>
+                </h:panelGroup>
+                <h:panelGroup layout="block" styleClass="toolbar">
+                    <h:panelGroup layout="block" styleClass="toolbar-icons">
+                        <h:outputText value="[]" styleClass="tool-icon" />
+                        <h:outputText value="[]" styleClass="tool-icon" />
+                        <h:outputText value="[]" styleClass="tool-icon" />
+                        <h:outputText value="[]" styleClass="tool-icon" />
+                    </h:panelGroup>
+                    <h:outputText value="File" styleClass="toolbar-item" />
+                    <h:outputText value="Edit" styleClass="toolbar-item" />
+                    <h:outputText value="View" styleClass="toolbar-item" />
+                    <h:outputText value="Tools" styleClass="toolbar-item" />
+                    <h:outputText value="Help" styleClass="toolbar-item" />
+                </h:panelGroup>
+                <h:panelGroup layout="block" styleClass="page-title marquee">
+                    <h:outputText value="Student Registered" styleClass="marquee-text" />
+                </h:panelGroup>
                 <h:outputText value="Here is the submitted information." styleClass="page-subtitle" />
                 <h:panelGrid columns="2" styleClass="response-grid">
                     <h:outputLabel for="firstName" value="First Name:" />
@@ -22,6 +44,21 @@
                     
                     <h:outputLabel for="lastName" value="Last Name:" />
                     <h:outputText id="lastName" value="#{student.lastName}" styleClass="response-value" />
+
+                    <h:outputLabel for="age" value="Age:" />
+                    <h:outputText id="age" value="#{student.age}" styleClass="response-value" />
+
+                    <h:outputLabel for="dob" value="Date of Birth:" />
+                    <h:outputText id="dob" value="#{student.dob}" styleClass="response-value" />
+
+                    <h:outputLabel for="email" value="Email:" />
+                    <h:outputText id="email" value="#{student.email}" styleClass="response-value" />
+
+                    <h:outputLabel for="major" value="Major / Program:" />
+                    <h:outputText id="major" value="#{student.major}" styleClass="response-value" />
+
+                    <h:outputLabel for="year" value="Academic Year:" />
+                    <h:outputText id="year" value="#{student.year}" styleClass="response-value" />
                 </h:panelGrid>
                 <h:outputLink value="student_form.xhtml" styleClass="ghost-button">Register another student</h:outputLink>
             </h:panelGroup>

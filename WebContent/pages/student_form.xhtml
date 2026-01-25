@@ -13,7 +13,29 @@
 	<h:body>
 	   <h:panelGroup layout="block" styleClass="page">
 		   <h:panelGroup layout="block" styleClass="card">
-			   <h:outputText value="Student Registration" styleClass="page-title" />
+			   <h:panelGroup layout="block" styleClass="window-bar">
+				   <h:outputText value="Student Registration — FrontOffice Pro" styleClass="window-title" />
+				   <h:panelGroup layout="block" styleClass="window-controls">
+					   <h:outputText value="[ ]" styleClass="window-btn" />
+					   <h:outputText value="X" styleClass="window-btn" />
+				   </h:panelGroup>
+			   </h:panelGroup>
+			   <h:panelGroup layout="block" styleClass="toolbar">
+				   <h:panelGroup layout="block" styleClass="toolbar-icons">
+					   <h:outputText value="[]" styleClass="tool-icon" />
+					   <h:outputText value="[]" styleClass="tool-icon" />
+					   <h:outputText value="[]" styleClass="tool-icon" />
+					   <h:outputText value="[]" styleClass="tool-icon" />
+				   </h:panelGroup>
+				   <h:outputText value="File" styleClass="toolbar-item" />
+				   <h:outputText value="Edit" styleClass="toolbar-item" />
+				   <h:outputText value="View" styleClass="toolbar-item" />
+				   <h:outputText value="Tools" styleClass="toolbar-item" />
+				   <h:outputText value="Help" styleClass="toolbar-item" />
+			   </h:panelGroup>
+			   <h:panelGroup layout="block" styleClass="page-title marquee">
+				   <h:outputText value="Student Registration" styleClass="marquee-text" />
+			   </h:panelGroup>
 			   <h:outputText value="Enter the student name details below." styleClass="page-subtitle" />
 			   <h:form styleClass="form">
 			       <h:panelGrid columns="2" styleClass="form-grid">
@@ -22,6 +44,21 @@
 				       
 				       <h:outputLabel for="lastName" value="Student's Last Name:" />
 				       <h:inputText id="lastName" value="#{student.lastName}" styleClass="text-input" />
+
+				       <h:outputLabel for="age" value="Age:" />
+				       <h:inputText id="age" value="#{student.age}" styleClass="text-input" />
+
+				       <h:outputLabel for="dob" value="Date of Birth (MM/DD/YYYY):" />
+				       <h:inputText id="dob" value="#{student.dob}" styleClass="text-input" />
+
+				       <h:outputLabel for="email" value="Email Address:" />
+				       <h:inputText id="email" value="#{student.email}" styleClass="text-input" />
+
+				       <h:outputLabel for="major" value="Major / Program:" />
+				       <h:inputText id="major" value="#{student.major}" styleClass="text-input" />
+
+				       <h:outputLabel for="year" value="Academic Year:" />
+				       <h:inputText id="year" value="#{student.year}" styleClass="text-input" />
 			       </h:panelGrid>
 			       <h:commandButton value="Submit" action="student_response" styleClass="primary-button" />
 			   </h:form>

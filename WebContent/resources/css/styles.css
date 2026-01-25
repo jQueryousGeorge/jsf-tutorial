@@ -25,7 +25,11 @@ body {
 	margin: 0;
 	font-family: "MS Sans Serif", Tahoma, Verdana, Geneva, sans-serif;
 	color: var(--ink);
-	background: #bdbdbd;
+	background-color: #bdbdbd;
+	background-image:
+		linear-gradient(0deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+	background-size: 18px 18px;
 }
 
 .page {
@@ -43,9 +47,75 @@ body {
 	border-top-color: #ffffff;
 	border-left-color: #ffffff;
 	border-radius: 0;
-	padding: 18px 20px 22px;
+	padding: 0 0 22px;
 	box-shadow: none;
 	position: relative;
+}
+
+.window-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: linear-gradient(90deg, #2b45c0, #5a76e8);
+	color: #fff;
+	padding: 6px 10px;
+	font-weight: 700;
+	letter-spacing: 0.2px;
+}
+
+.window-title {
+	display: block;
+}
+
+.window-controls {
+	display: flex;
+	gap: 6px;
+}
+
+.window-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	background: #dcdcdc;
+	color: #000;
+	border: 2px solid #7a7a7a;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	font-size: 12px;
+}
+
+.toolbar {
+	display: flex;
+	gap: 16px;
+	padding: 6px 10px;
+	background: #d9d9d9;
+	border-bottom: 2px solid #8e8e8e;
+}
+
+.toolbar-icons {
+	display: flex;
+	gap: 6px;
+	margin-right: 10px;
+}
+
+.tool-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 18px;
+	border: 2px solid #7a7a7a;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	background: #efefef;
+	font-size: 12px;
+}
+
+.toolbar-item {
+	font-weight: 700;
+	font-size: 13px;
 }
 
 .page-title {
@@ -54,17 +124,20 @@ body {
 	font-size: 32px;
 	letter-spacing: 0.2px;
 	margin-bottom: 6px;
+	padding: 12px 18px 0;
 }
 
 .page-subtitle {
 	display: block;
 	color: var(--muted);
 	margin-bottom: 16px;
+	padding: 0 18px;
 }
 
 .form {
 	display: grid;
 	gap: 16px;
+	padding: 0 18px;
 }
 
 .form-grid,
@@ -76,6 +149,10 @@ body {
 	border: 2px solid #7a7a7a;
 	border-top-color: #ffffff;
 	border-left-color: #ffffff;
+}
+
+.response-grid {
+	margin-top: 6px;
 }
 
 .form-grid td,
@@ -122,6 +199,7 @@ body {
 	cursor: pointer;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
+	margin-top: 6px;
 }
 
 .primary-button:hover {
@@ -135,6 +213,7 @@ body {
 .ghost-button {
 	display: inline-block;
 	margin-top: 14px;
+	padding: 0 18px;
 	color: var(--accent);
 	text-decoration: underline;
 	font-weight: 700;
@@ -146,7 +225,7 @@ body {
 
 @media (max-width: 640px) {
 	.card {
-		padding: 14px 14px 18px;
+		padding: 0 0 18px;
 	}
 
 	.form-grid,
@@ -177,5 +256,26 @@ body {
 	.form-grid td:first-child,
 	.response-grid td:first-child {
 		white-space: normal;
+	}
+}
+
+.marquee {
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	padding-right: 20px;
+}
+
+.marquee-text {
+	display: inline-block;
+	animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
 	}
 }
