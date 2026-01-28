@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Select Items Example</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+
+<h:body>
+	<h:panelGroup layout="block" styleClass="page">
+		<h:panelGroup layout="block" styleClass="card">
+			<h:outputText value="Select a Hobbit" styleClass="page-title" />
+			<h:outputText
+				value="Choose a hobbit from the list and submit your selection."
+				styleClass="page-subtitle" />
+
+			<h:form styleClass="form">
+				<h:panelGrid columns="2" styleClass="form-grid">
+					<h:outputLabel for="hobbitSelect" value="Hobbit:" />
+					<h:selectOneMenu id="hobbitSelect"
+						value="#{selectItemsBean.selectedHobbitId}"
+						styleClass="select-input">
+						<!-- 
+                            'value' attribute points to the list in the bean.
+                            'var' attribute names the temporary request-scoped variable for each iteration (here, 'hobbit').
+                            'itemValue' uses the 'var' to access the 'id' property.
+                            'itemLabel' uses the 'var' to access the 'name' property.
+                            'itemDisabled' uses the 'var' to check if an item should be disabled.
+                        -->
+						<f:selectItems value="#{selectItemsBean.hobbitList}" var="hobbit"
+							itemValue="#{hobbit.id}" itemLabel="#{hobbit.name}"
+							itemDisabled="#{hobbit.disabled}"
+							itemDescription="#{hobbit.description}" />
+					</h:selectOneMenu>
+				</h:panelGrid>
+
+				<h:commandButton value="Submit" action="submitAction"
+					styleClass="primary-button" />
+
+				<h:panelGroup layout="block">
+					<h:outputText value="Selected Hobbit ID: " />
+					<h:outputText value="#{selectItemsBean.selectedHobbitId}"
+						styleClass="response-value" />
+				</h:panelGroup>
+			</h:form>
+		</h:panelGroup>
+	</h:panelGroup>
+</h:body>
+</html>

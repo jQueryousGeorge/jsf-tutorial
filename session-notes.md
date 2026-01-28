@@ -35,6 +35,13 @@
 
 ## Notes - January 28, 2026
 
+### January 28, 2026
+
+- Added JSF resource bundle support: created `src/form.properties` and registered it in `WebContent/WEB-INF/faces-config.xml`.
+- Added CDI activator `WebContent/WEB-INF/beans.xml` (bean-discovery-mode `annotated`).
+- Reviewed `student-form-two.xhtml` / `student-response-two.xhtml` and fixed layout by switching `h:panelGrid` to 2 columns.
+- Confirmed project uses JSF 2.2.8 (`javax.faces`) from `WebContent/WEB-INF/lib`.
+
 ### `f:loadBundle`
 
 `f:loadBundle` is not required IF you have defined the properties file in your `WEB-INF\faces.config.xml` file. Otherwise, you would need it if you hadn't defined it.
