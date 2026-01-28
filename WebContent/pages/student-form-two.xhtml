@@ -7,15 +7,33 @@
 
 <h:head>
 	<title><ui:insert name="title">Student Form 2</ui:insert></title>
+	<h:outputStylesheet library="css" name="styles.css" />
 </h:head>
 
 <h:body>
-    <h:panelGroup>
-        <h:form>
-            <h:outputLabel for="firstName" value="What's your first Name?"></h:outputLabel>
-            <h:inputText id="firstName" value=""></h:inputText>
-        </h:form>
-    </h:panelGroup>
+	<h:panelGroup layout="block" styleClass="page">
+		<h:panelGroup layout="block" styleClass="card">
+			<h:outputText value="Student Registration" styleClass="page-title" />
+			<h:outputText value="Enter the student name details below."
+				styleClass="page-subtitle" />
+			<h:form styleClass="form">
+				<h:panelGrid columns="2" styleClass="form-grid">
+					<h:outputLabel for="firstName" value="#{form['student.firstName']}" />
+					<h:inputText id="firstName" value="#{studentTwo.firstName}" />
+
+					<h:outputLabel for="lastName" value="#{form['student.lastName']}" />
+					<h:inputText id="lastName" value="#{studentTwo.lastName}" />
+
+					<h:outputLabel for="country" value="#{form['student.country']}" />
+					<h:selectOneMenu value="#{studentTwo.country}" id="country">
+						<f:selectItems value="#{countryListTwo.countries}"></f:selectItems>
+					</h:selectOneMenu>
+					<h:commandButton action="student-response-two"
+						value="#{form['student.submit']}" styleClass="primary-button" />
+				</h:panelGrid>
+			</h:form>
+		</h:panelGroup>
+	</h:panelGroup>
 </h:body>
 
 </html>

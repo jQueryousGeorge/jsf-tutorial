@@ -5,11 +5,12 @@ import java.util.Locale;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "countryListTwo")
-@RequestScoped
+@ApplicationScoped
 public class CountryListTwo {
 	private List<String> countries = new ArrayList<>();
 	
